@@ -44,8 +44,9 @@
     padding-top: 54px;
     background: #fff;
     padding-bottom: 50px;
+
     .icon {
-        border: 1px solid #ebebeb;
+        border: 5px solid #ebebeb;
         width: 78px;
         height: 78px;
         color: $theme-color;
@@ -108,6 +109,7 @@
             border-color: #5f61ff;
             color: #fff;
         }
+        border: 1px solid $theme-color;
     }
 }
 
@@ -126,63 +128,6 @@ textarea {
     font-size: 14px;
     margin-top: 20px;
 }
-.discordbutton {
-    text-align: center;
-    .icono{
-        font-size: 2.5em;
 
-    }
-    a{
-        &.botonsitodiscord{
-            &.theme-color {
-                border-color: $theme-color;
-                color: $theme-color;
-            }
-            padding: 0 25px;
-            height: 46px;
-            display: inline-block;
-            line-height: 42px;
-            border: 2px solid #5F61FF;
-            border-radius: 6px;
-            color: #5F61FF;
-            font-size: 14px;
-            @extend %transition;
-            position: relative;
-            z-index: 2;
-            @media #{$sm-layout} {
-                
-            }
-            @media #{$large-mobile} {
-                height: 34px;
-                line-height: 29px;
-            }
-            &::before {
-               display: none;
-            }
-            &:hover{
-                border-color: transparent;
-                transform: translateY(-3px);
-                color: #ffffff;
-                border: 2px solid $theme-color;
-                background: $theme-color;
-                border-radius: 6px;
-            }
-            @media #{$sm-layout} {
-                display: none;
-            }
-            span{
-                margin-left: 5px;
-                font-family: "Poppins",sans-serif;
-                text-transform: uppercase;
-
-
-            }
-        }
-    }
-    
-     
-    
-
-}
 
 
