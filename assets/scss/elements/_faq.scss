@@ -1,0 +1,184 @@
+
+  /*------------------------------------*\
+    #CARD
+  \*------------------------------------*/
+  .card {
+    position: relative;
+    border-radius: 2em;
+    box-shadow: 0 1.875rem 2.5rem rgba(29, 30, 53, 0.4);
+    background: white no-repeat;
+    // background-image: url("../images/bg-pattern-mobile.svg");
+    background-position: top center;
+    padding: 6.875rem 1.25rem 3.125rem;
+    width: 100%;
+    max-width: 20.625rem;
+  }
+  @media screen and (min-width: 61.25em) {
+    .card {
+    //   background-image: url("../images/bg-pattern-desktop.svg"), url("../images/illustration-woman-online-desktop.svg");
+      background-position: left -34.375rem top 60%, left -6.25rem center;
+      background-size: 100%, 50%;
+      padding: 3.125rem 8.125rem 3.125rem 3.125rem;
+      max-width: 56.25rem;
+      overflow: visible;
+    }
+  }
+  
+  .card__container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  @media screen and (min-width: 61.25em) {
+    .card__container {
+      flex-direction: row-reverse;
+    }
+  }
+  
+  @media screen and (min-width: 61.25em) {
+    .card__accordion {
+      flex-basis: 100%;
+    }
+  }
+  
+  .card__title {
+    text-align: center;
+    font-size: 1.875rem;
+  }
+  @media screen and (min-width: 61.25em) {
+    .card__title {
+      text-align: left;
+    }
+  }
+  
+  .card__illustration {
+    position: absolute;
+    top: -6.25rem;
+  }
+  @media screen and (min-width: 61.25em) {
+    .card__illustration {
+      position: relative;
+      top: initial;
+      left: -8.125rem;
+      flex-basis: 100%;
+    }
+  }
+  
+  @media screen and (min-width: 61.25em) {
+    .card__image {
+      width: 100%;
+    }
+  }
+  
+  .card__illustration-box {
+    position: relative;
+    top: 2.5rem;
+    left: -0.625rem;
+    transform: scale(0.8);
+  }
+  
+  /*------------------------------------*\
+    #ACCORDION
+  \*------------------------------------*/
+  /**
+   * 1. I don't use "flex-basis" for the 
+   *    width since the parent element has 
+   *    "flex-direction: column-reverse;" 
+   *    which means that "flex-basis" 
+   *    controls the "height" of the 
+   *    elements 
+   *
+   * 2. Since flexbox behavior wants to
+   *    fit the children elements at the
+   *    smallest width, I set the width to
+   *    100% to make sure when the
+   *    "paragraph" element disappear, the
+   *    accordion still have full width
+   *    otherwise, the arrow icon and the
+   *    question text will get too near.
+   *
+   * */
+  .accordion {
+    width: 100%;
+    /* 1 */
+    /* 2 */
+  }
+  
+  .accordion__item {
+    border-bottom: 0.0625rem solid #e7e7e9;
+    padding: 0.1875rem;
+  }
+  
+  .accordion__item:not(:first-child) {
+    margin-top: 1rem;
+  }
+  
+  .accordion__trigger {
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0.4375rem 0;
+    width: 100%;
+    font-size: 0.8125rem;
+  }
+  .accordion__trigger:hover, .accordion__trigger:active {
+    color: #f47c57;
+  }
+  .accordion__trigger:focus-visible {
+    outline: 0.125em dotted #111111;
+    outline-offset: 0.09em;
+  }
+  @media screen and (min-width: 61.25em) {
+    .accordion__trigger:focus-visible {
+      outline-width: 0.2em;
+    }
+  }
+  
+  @media screen and (prefers-reduced-motion: no-preference) {
+    .accordion__icon {
+      transition: transform 250ms ease-in-out;
+    }
+  }
+  
+  .accordion__trigger[aria-expanded=true] {
+    font-weight: 700;
+  }
+  
+  .accordion__trigger[aria-expanded=true] .accordion__icon {
+    transform: rotate(180deg);
+  }
+  
+  .accordion__description {
+    margin: 0.1875rem 0;
+    color: #787887;
+  }
+  
+  .accordion__item--details[open] .accordion__icon {
+    transform: rotate(180deg);
+  }
+  
+  .accordion__item--details[open] .accordion__title {
+    font-weight: 700;
+  }
+  
+  .accordion__summary {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 0.4375rem 0;
+    font-size: 0.8125rem;
+  }
+  .accordion__summary:hover, .accordion__summary:active {
+    color: #f47c57;
+  }
+  .accordion__summary:focus-visible {
+    outline: 0.125em dotted #111111;
+    outline-offset: 0.09em;
+  }
+  @media screen and (min-width: 61.25em) {
+    .accordion__summary:focus-visible {
+      outline-width: 0.2em;
+    }
+  }
